@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,15 +21,8 @@ namespace DicerollersFinals
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.URL = "F:\\Record\\2025-05-25 20-26-37.mp4";
+            axWindowsMediaPlayer1.URL = Path.Combine(Application.StartupPath, "Videos", "Clouds Free STOCK FOOTAGE.mp4");
             axWindowsMediaPlayer1.uiMode = "None";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form4 form4 = new Form4();
-            form4.Show();
-            this.Hide();
         }
 
         private void PlayVideoButton_Click(object sender, EventArgs e)
@@ -38,6 +33,13 @@ namespace DicerollersFinals
         private void StopVideoButton_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
+        }
+
+        private void TutorialBackButton_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
+            this.Hide();
         }
     }
 }

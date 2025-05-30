@@ -54,9 +54,9 @@
             this.totalPayoutLabel.BackColor = System.Drawing.Color.Black;
             this.totalPayoutLabel.Font = new System.Drawing.Font("Calibri", 21F, System.Drawing.FontStyle.Bold);
             this.totalPayoutLabel.ForeColor = System.Drawing.Color.HotPink;
-            this.totalPayoutLabel.Location = new System.Drawing.Point(364, 328);
+            this.totalPayoutLabel.Location = new System.Drawing.Point(352, 193);
             this.totalPayoutLabel.Name = "totalPayoutLabel";
-            this.totalPayoutLabel.Size = new System.Drawing.Size(71, 35);
+            this.totalPayoutLabel.Size = new System.Drawing.Size(97, 44);
             this.totalPayoutLabel.TabIndex = 19;
             this.totalPayoutLabel.Text = "1000";
             this.totalPayoutLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

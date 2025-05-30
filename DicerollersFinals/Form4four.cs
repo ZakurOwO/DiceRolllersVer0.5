@@ -64,10 +64,15 @@ namespace DicerollersFinals
         public void MultiplierSoundFX()
         {
                 string soundPath2 = Path.Combine(Application.StartupPath, "SoundEfx", "sounds-of-button-selection-in-the-game-menu-sound-effect_tMatdkEs.wav");
+                if (!File.Exists(soundPath2))
+                {
+                    MessageBox.Show($"Sound file not found:\n{soundPath2}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 using (SoundPlayer multiplier = new SoundPlayer(soundPath2))
                 {
                     multiplier.PlaySync(); // PlaySync means it waits until sound finishes before continuing
-            }
+                }
         }
 
         private void InitializeRollTimer() // Initializes the timer that animates rolling of the dice
@@ -303,7 +308,7 @@ namespace DicerollersFinals
 
             // Show congratulations popup if there is a positive payout
             Form3 congratsForm = new Form3(payout);
-            await Task.Delay(1500);
+            await Task.Delay(800);
             // Hide Form4 while Form3 is shown
             this.Hide();
 
@@ -458,6 +463,13 @@ namespace DicerollersFinals
             Form2 form2 = new Form2();
             form2.Show(); 
             this.Hide();  
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void MultiplierLabel2_Click(object sender, EventArgs e) { }
