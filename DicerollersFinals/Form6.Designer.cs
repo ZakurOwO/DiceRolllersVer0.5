@@ -1,6 +1,6 @@
 ﻿namespace DicerollersFinals
 {
-    partial class Form3
+    partial class Form6
     {
         /// <summary>
         /// Required designer variable.
@@ -28,51 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.totalPayoutLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // totalPayoutLabel
-            // 
-            this.totalPayoutLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.totalPayoutLabel.BackColor = System.Drawing.Color.Black;
-            this.totalPayoutLabel.Font = new System.Drawing.Font("Calibri", 21F, System.Drawing.FontStyle.Bold);
-            this.totalPayoutLabel.ForeColor = System.Drawing.Color.HotPink;
-            this.totalPayoutLabel.Location = new System.Drawing.Point(457, 348);
-            this.totalPayoutLabel.Name = "totalPayoutLabel";
-            this.totalPayoutLabel.Size = new System.Drawing.Size(97, 44);
-            this.totalPayoutLabel.TabIndex = 19;
-            this.totalPayoutLabel.Text = "1000";
-            this.totalPayoutLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.totalPayoutLabel.Click += new System.EventHandler(this.totalPayoutLabel_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox1.BackgroundImage = global::DicerollersFinals.Properties.Resources.bg1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::DicerollersFinals.Properties.Resources.Triple_Tie;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(981, 617);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Form3
+            // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(981, 617);
-            this.Controls.Add(this.totalPayoutLabel);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form3";
+            this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "Form6";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -81,6 +68,5 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label totalPayoutLabel;
     }
 }

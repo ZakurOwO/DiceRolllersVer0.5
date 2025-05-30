@@ -21,7 +21,7 @@ namespace DicerollersFinals
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.URL = Path.Combine(Application.StartupPath, "Videos", "Clouds Free STOCK FOOTAGE.mp4");
+            axWindowsMediaPlayer1.URL = Path.Combine(Application.StartupPath, "Videos", "0530.mp4");
             axWindowsMediaPlayer1.uiMode = "None";
         }
 
@@ -37,9 +37,16 @@ namespace DicerollersFinals
 
         private void TutorialBackButton_Click(object sender, EventArgs e)
         {
+            axWindowsMediaPlayer1.Ctlcontrols.stop(); // Stop the video
             Form4 form4 = new Form4();
             form4.Show();
             this.Hide();
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = Path.Combine(Application.StartupPath, "Videos", "0530.mp4");
+            axWindowsMediaPlayer1.uiMode = "None";
         }
     }
 }

@@ -54,6 +54,7 @@
             this.MultiplierLabel1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice1)).BeginInit();
@@ -268,6 +269,7 @@
             this.walletBalanceLabel.Size = new System.Drawing.Size(71, 33);
             this.walletBalanceLabel.TabIndex = 21;
             this.walletBalanceLabel.Text = "5000";
+            this.walletBalanceLabel.Click += new System.EventHandler(this.walletBalanceLabel_Click);
             // 
             // label10
             // 
@@ -399,6 +401,25 @@
             this.backButton.TabStop = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // button2
+            // 
+            this.button2.AllowDrop = true;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button2.BackgroundImage = global::DicerollersFinals.Properties.Resources.user__1_;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(715, 70);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(58, 27);
+            this.button2.TabIndex = 31;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,6 +428,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 617);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.MultiplierLabel1);
@@ -463,7 +485,6 @@
         private System.Windows.Forms.MaskedTextBox betAmount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label Payoutname;
-        private System.Windows.Forms.Label totalPayoutLabel;
         private System.Windows.Forms.Button rollButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label walletBalanceLabel;
@@ -476,5 +497,7 @@
         private System.Windows.Forms.Label MultiplierLabel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox backButton;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Label totalPayoutLabel;
     }
 }

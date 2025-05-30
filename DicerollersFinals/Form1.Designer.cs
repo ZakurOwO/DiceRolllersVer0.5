@@ -28,59 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Exit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Exitout = new System.Windows.Forms.Button();
+            this.Start = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // Exitout
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::DicerollersFinals.Properties.Resources.Untitled_design_2_;
-            this.pictureBox1.Location = new System.Drawing.Point(688, 336);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 181);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.Exitout.AllowDrop = true;
+            this.Exitout.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Exitout.AutoSize = true;
+            this.Exitout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Exitout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Exitout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Exitout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Exitout.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.Exitout.ForeColor = System.Drawing.Color.White;
+            this.Exitout.Location = new System.Drawing.Point(875, 64);
+            this.Exitout.Name = "Exitout";
+            this.Exitout.Size = new System.Drawing.Size(103, 27);
+            this.Exitout.TabIndex = 30;
+            this.Exitout.Text = "Exit";
+            this.Exitout.UseVisualStyleBackColor = false;
+            this.Exitout.Click += new System.EventHandler(this.Exitout_Click);
             // 
-            // Exit
+            // Start
             // 
-            this.Exit.AllowDrop = true;
-            this.Exit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Exit.AutoSize = true;
-            this.Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Exit.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.Exit.ForeColor = System.Drawing.Color.White;
-            this.Exit.Location = new System.Drawing.Point(904, 12);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(74, 41);
-            this.Exit.TabIndex = 6;
-            this.Exit.Text = "Close";
-            this.Exit.UseVisualStyleBackColor = false;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.Start.BackColor = System.Drawing.Color.Black;
+            this.Start.BackgroundImage = global::DicerollersFinals.Properties.Resources.Untitled_design_2_1;
+            this.Start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Start.Location = new System.Drawing.Point(632, 276);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(284, 253);
+            this.Start.TabIndex = 0;
+            this.Start.UseVisualStyleBackColor = false;
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DicerollersFinals.Properties.Resources.newStartUp;
+            this.BackgroundImage = global::DicerollersFinals.Properties.Resources.Violet_Gradient_Blob_Virtual_Background__4_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 617);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Exitout);
+            this.Controls.Add(this.Start);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,5 +85,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Button Exitout;
+        private System.Windows.Forms.Button Start;
     }
 }

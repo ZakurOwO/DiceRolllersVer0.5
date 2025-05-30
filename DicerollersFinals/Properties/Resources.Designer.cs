@@ -73,6 +73,16 @@ namespace DicerollersFinals.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back__1_ {
+            get {
+                object obj = ResourceManager.GetObject("back (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg {
             get {
                 object obj = ResourceManager.GetObject("bg", resourceCulture);
@@ -93,9 +103,9 @@ namespace DicerollersFinals.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Congratulations {
+        internal static System.Drawing.Bitmap Congratulations___2_ {
             get {
-                object obj = ResourceManager.GetObject("Congratulations", resourceCulture);
+                object obj = ResourceManager.GetObject("Congratulations! (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +113,9 @@ namespace DicerollersFinals.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Congratulations___2_ {
+        internal static System.Drawing.Bitmap gcash {
             get {
-                object obj = ResourceManager.GetObject("Congratulations! (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("gcash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +213,59 @@ namespace DicerollersFinals.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Triple_Tie {
+            get {
+                object obj = ResourceManager.GetObject("Triple_Tie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Untitled_design_2_ {
             get {
                 object obj = ResourceManager.GetObject("Untitled_design(2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_design_2_1 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled_design(2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user__1_ {
+            get {
+                object obj = ResourceManager.GetObject("user (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Violet_Gradient_Blob_Virtual_Background__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Violet Gradient Blob Virtual Background (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +283,69 @@ namespace DicerollersFinals.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Violet_Gradient_Blob_Virtual_Background__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("Violet Gradient Blob Virtual Background (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Violet_Gradient_Blob_Virtual_Background__3_ {
             get {
                 object obj = ResourceManager.GetObject("Violet Gradient Blob Virtual Background (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Violet_Gradient_Blob_Virtual_Background__4_ {
+            get {
+                object obj = ResourceManager.GetObject("Violet Gradient Blob Virtual Background (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Violet_Gradient_Blob_Virtual_Background__4_1 {
+            get {
+                object obj = ResourceManager.GetObject("Violet Gradient Blob Virtual Background (4)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Violet_Gradient_Blob_Virtual_Background__5_ {
+            get {
+                object obj = ResourceManager.GetObject("Violet Gradient Blob Virtual Background (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visa {
+            get {
+                object obj = ResourceManager.GetObject("Visa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap You_win {
+            get {
+                object obj = ResourceManager.GetObject("You win", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

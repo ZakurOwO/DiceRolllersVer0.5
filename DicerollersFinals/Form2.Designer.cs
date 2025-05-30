@@ -76,6 +76,7 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(667, 392);
             this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // TutorialBackButton
             // 
@@ -83,7 +84,7 @@
             this.TutorialBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TutorialBackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TutorialBackButton.ErrorImage = null;
-            this.TutorialBackButton.Image = ((System.Drawing.Image)(resources.GetObject("TutorialBackButton.Image")));
+            this.TutorialBackButton.Image = global::DicerollersFinals.Properties.Resources.back__1_;
             this.TutorialBackButton.Location = new System.Drawing.Point(85, 70);
             this.TutorialBackButton.Name = "TutorialBackButton";
             this.TutorialBackButton.Size = new System.Drawing.Size(40, 39);

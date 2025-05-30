@@ -23,7 +23,11 @@ namespace DicerollersFinals
             bgmPlayer.controls.play();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        
+
+        
+
+        private void Start_Click(object sender, EventArgs e)
         {
             // Stop and release the player
             if (bgmPlayer != null)
@@ -38,9 +42,10 @@ namespace DicerollersFinals
             this.Hide();
         }
 
-        private void Exit_Click(object sender, EventArgs e)
+        private void Exitout_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
     }
-}
+    }
+
