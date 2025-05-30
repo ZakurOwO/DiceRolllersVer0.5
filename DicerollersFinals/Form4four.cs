@@ -16,8 +16,9 @@ namespace DicerollersFinals
         private int patternIndex = 0;
         private bool cheatPatternMatched = false;
         private Random random = new Random();
-        private int currentBalance = 5000;
-
+        // Make currentBalance static so it's shared across all instances
+        private static int currentBalance = 5000;
+        
         private Timer rollTimer;
         private int stopCount = 0;
         private bool[] diceStopped = new bool[3];
@@ -30,9 +31,46 @@ namespace DicerollersFinals
         private Timer RollingSounds;
         private int revealIndex = 0;
 
-        
-        
+        private static int totalWins = 0;           // Total credits won across all games
+        private static int totalBets = 0;           // Total number of rolls/bets made
+        private static int biggestWin = 0;
 
+        // Static property to access the current balance from other forms
+        public static int CurrentBalance
+        {
+            get { return currentBalance; }
+            set
+            {
+                currentBalance = value;
+                // Update all open Form4 instances
+                UpdateAllForm4Balances();
+            }
+        }
+
+        // Static method to update balance display on all Form4 instances
+        private static void UpdateAllForm4Balances()
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Form4 form4)
+                {
+                    form4.UpdateBalanceDisplay();
+                }
+            }
+        }
+
+        // Method to update the balance display on this form
+        public void UpdateBalanceDisplay()
+        {
+            if (walletBalanceLabel.InvokeRequired)
+            {
+                walletBalanceLabel.Invoke(new Action(() => walletBalanceLabel.Text = currentBalance.ToString()));
+            }
+            else
+            {
+                walletBalanceLabel.Text = currentBalance.ToString();
+            }
+        }
 
         public Form4()  // Main form constructor - sets up timers and initializes components
         {
@@ -42,7 +80,25 @@ namespace DicerollersFinals
         }
 
 
-    
+        public static int TotalWins
+        {
+            get { return totalWins; }
+            set { totalWins = value; }
+        }
+
+        public static int TotalBets
+        {
+            get { return totalBets; }
+            set { totalBets = value; }
+        }
+
+        public static int BiggestWin
+        {
+            get { return biggestWin; }
+            set { biggestWin = value; }
+        }
+
+
         private void InitializeRevealTimer()     // Initializes the timer for revealing dice one by one
         {
             revealTimer = new Timer();
@@ -52,21 +108,26 @@ namespace DicerollersFinals
 
         public async Task DiceSoundFX()
         {
-                string soundPath1 = Path.Combine(Application.StartupPath, "SoundEfx", "DiceRollSFX.wav");
-                using (SoundPlayer diceroll = new SoundPlayer(soundPath1))
-                {
+            string soundPath1 = Path.Combine(Application.StartupPath, "SoundEfx", "DiceRollSFX.wav");
+            using (SoundPlayer diceroll = new SoundPlayer(soundPath1))
+            {
 
                 await Task.Delay(15); // Wait for 1 second before playing sound
                 diceroll.PlaySync(); // PlaySync means it waits until sound finishes before continuing
-                
-            }           
+
+            }
         }
         public void MultiplierSoundFX()
         {
-                string soundPath2 = Path.Combine(Application.StartupPath, "SoundEfx", "sounds-of-button-selection-in-the-game-menu-sound-effect_tMatdkEs.wav");
-                using (SoundPlayer multiplier = new SoundPlayer(soundPath2))
-                {
-                    multiplier.PlaySync(); // PlaySync means it waits until sound finishes before continuing
+            string soundPath2 = Path.Combine(Application.StartupPath, "SoundEfx", "sounds-of-button-selection-in-the-game-menu-sound-effect_tMatdkEs.wav");
+            if (!File.Exists(soundPath2))
+            {
+                MessageBox.Show($"Sound file not found:\n{soundPath2}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            using (SoundPlayer multiplier = new SoundPlayer(soundPath2))
+            {
+                multiplier.PlaySync(); // PlaySync means it waits until sound finishes before continuing
             }
         }
 
@@ -77,13 +138,12 @@ namespace DicerollersFinals
             rollTimer.Tick += RollTimer_Tick;
         }
 
-
         private void RevealTimer_Tick(object sender, EventArgs e) // Handles revealing dice values one at a time and shows their multipliers
         {
             if (revealIndex < 3)
             {
                 // Stop this die and show its multiplier
-        
+
                 diceStopped[revealIndex] = true;
                 UpdateMultiplierDisplay(revealIndex);
                 revealIndex++;
@@ -124,7 +184,7 @@ namespace DicerollersFinals
 
         private void Form4_Load(object sender, EventArgs e) // Initializes UI elements like wallet balance and payout label on form load
         {
-            walletBalanceLabel.Text = currentBalance.ToString();
+            UpdateBalanceDisplay();
             totalPayoutLabel.Text = "0";
         }
 
@@ -206,7 +266,7 @@ namespace DicerollersFinals
                     MessageBox.Show("Not enough balance.");
                     return;
                 }
-                
+
                 CalculateFinalDiceResults();
                 isRolling = true;
                 stopCount = 0;
@@ -262,22 +322,36 @@ namespace DicerollersFinals
             totalMultiplier += double.Parse(MultiplierLabel2.Text);
             totalMultiplier += double.Parse(MultiplierLabel3.Text);
 
-            // Check for triple/pair bonuses
-            if (finalDice1 == finalDice2 && finalDice2 == finalDice3)
+            bool isForm6Shown = false;
+
+            // Triple match with user prediction
+            if (finalDice1 == finalDice2 && finalDice2 == finalDice3 && finalDice1 == userPrediction)
             {
-                if (finalDice1 == userPrediction)
-                {
-                    totalMultiplier = 0.75 * 3;
-                    MultiplierLabel1.Text = "0.75";
-                    MultiplierLabel2.Text = "0.75";
-                    MultiplierLabel3.Text = "0.75";
-                }
+                totalMultiplier = 0.75 * 3;
+                MultiplierLabel1.Text = "0.75";
+                MultiplierLabel2.Text = "0.75";
+                MultiplierLabel3.Text = "0.75";
+
+                isForm6Shown = true;
+
+                // Show Form6 with auto-close
+                Form6 form6 = new Form6();
+                await Task.Delay(800);
+                form6.Show();
+                this.Hide();
+
+                // Wait for 3 seconds before closing Form6 and showing Form4 again
+                await Task.Delay(6000);
+
+                form6.Close();
+                this.Show();
             }
             else if ((finalDice1 == finalDice2 && finalDice1 == userPrediction) ||
                      (finalDice1 == finalDice3 && finalDice1 == userPrediction) ||
                      (finalDice2 == finalDice3 && finalDice2 == userPrediction))
             {
                 totalMultiplier += 0.75 * 2;
+
                 // Update pair multipliers
                 if (finalDice1 == finalDice2)
                 {
@@ -297,23 +371,35 @@ namespace DicerollersFinals
             }
 
             int payout = (int)(bet * totalMultiplier);
-            currentBalance += payout - bet;
-            walletBalanceLabel.Text = currentBalance.ToString();
+
+            // Update stats
+            totalBets++;
+            if (payout > 0)
+            {
+                totalWins += payout;
+                if (payout > biggestWin)
+                {
+                    biggestWin = payout;
+                }
+            }
+
+            CurrentBalance = currentBalance + payout - bet;
             totalPayoutLabel.Text = $"{payout}";
 
-            // Show congratulations popup if there is a positive payout
-            Form3 congratsForm = new Form3(payout);
-            await Task.Delay(1500);
-            // Hide Form4 while Form3 is shown
-            this.Hide();
+            if (!isForm6Shown)
+            {
+                Form3 congratsForm = new Form3(payout);
+                await Task.Delay(800);
 
-            await congratsForm.ShowCongratsPopupIfWin(payout > 0, payout);
-
-            // Show Form4 again after Form3 is closed
-            this.Show();
+                this.Hide();
+                await congratsForm.ShowCongratsPopupIfWin(payout > 0, payout);
+                this.Show();
+            }
 
             ResetMultiplierLabels();
         }
+
+
 
         private void ResetMultiplierLabels()
         {
@@ -325,15 +411,11 @@ namespace DicerollersFinals
             MultiplierLabel3.Visible = true;
         }
 
-
-
         private double CalculateSingleDieMultiplier(int dieValue) // Calculates multiplier for a single die based on distance from prediction
         {
             int gap = Math.Abs(dieValue - userPrediction);
             return GetBonusFromGap(gap);
         }
-
-
 
         private void CalculateFinalDiceResults() // Determines final dice results, includes logic for cheat code pattern
         {
@@ -415,8 +497,6 @@ namespace DicerollersFinals
                 return (int)(bet * totalMultiplier);
             }
 
-          
-
             for (int i = 0; i < 3; i++)
             {
                 int gap = Math.Abs(dice[i] - userPrediction);
@@ -449,15 +529,34 @@ namespace DicerollersFinals
 
         private void MultiplierLabel1_Click(object sender, EventArgs e) { }
 
-        private void PredictionBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e){ }
+        private void PredictionBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
 
-        private void betAmount_MaskInputRejected(object sender, MaskInputRejectedEventArgs e){ }
+        private void betAmount_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
 
         private void button1_Click(object sender, EventArgs e) // go to tutorial page.
         {
             Form2 form2 = new Form2();
-            form2.Show(); 
-            this.Hide();  
+            form2.Show();
+            this.Hide();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.Show();
+            this.Hide();
+        }
+
+        private void walletBalanceLabel_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void MultiplierLabel2_Click(object sender, EventArgs e) { }

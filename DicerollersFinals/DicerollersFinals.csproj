@@ -75,6 +75,18 @@
     <Compile Include="Form4four.Designer.cs">
       <DependentUpon>Form4four.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -89,20 +101,26 @@
     <EmbeddedResource Include="Form4four.resx">
       <DependentUpon>Form4four.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -159,13 +177,24 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Congratulations.gif" />
+    <None Include="Resources\Violet Gradient Blob Virtual Background %281%29.png" />
+    <None Include="Resources\Violet Gradient Blob Virtual Background %284%291.png" />
+    <None Include="Resources\Violet Gradient Blob Virtual Background %282%291.png" />
+    <None Include="Resources\You win.gif" />
+    <None Include="Resources\Triple_Tie.gif" />
+    <None Include="Resources\Visa.png" />
+    <None Include="Resources\gcash.png" />
+    <None Include="Resources\Violet Gradient Blob Virtual Background %285%29.png" />
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\Violet Gradient Blob Virtual Background %284%29.png" />
     <None Include="Resources\Untitled_design%282%29.png" />
     <None Include="Resources\Congratulations! %282%29.gif" />
     <None Include="Resources\Violet Gradient Blob Virtual Background %283%29.png" />
     <None Include="Resources\newStartUp.png" />
     <None Include="Resources\Violet Gradient Blob Virtual Background %282%29.png" />
     <None Include="Resources\Adobe Express - file.png" />
+    <None Include="Resources\back %281%29.png" />
     <Content Include="Resources\DiceRollSFX.wav" />
     <None Include="Resources\StartUp.png" />
   </ItemGroup>

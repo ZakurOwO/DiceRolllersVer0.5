@@ -33,7 +33,6 @@
             this.PicDice3 = new System.Windows.Forms.PictureBox();
             this.PicDice2 = new System.Windows.Forms.PictureBox();
             this.PicDice1 = new System.Windows.Forms.PictureBox();
-            this.Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,9 +53,12 @@
             this.MultiplierLabel3 = new System.Windows.Forms.Label();
             this.MultiplierLabel1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backButton)).BeginInit();
             this.SuspendLayout();
             // 
             // DiceRoll
@@ -108,25 +110,6 @@
             this.PicDice1.TabIndex = 4;
             this.PicDice1.TabStop = false;
             // 
-            // Exit
-            // 
-            this.Exit.AllowDrop = true;
-            this.Exit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Exit.AutoSize = true;
-            this.Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Exit.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.Exit.ForeColor = System.Drawing.Color.White;
-            this.Exit.Location = new System.Drawing.Point(102, 88);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(58, 27);
-            this.Exit.TabIndex = 5;
-            this.Exit.Text = "Exit";
-            this.Exit.UseVisualStyleBackColor = false;
-            this.Exit.UseWaitCursor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -134,7 +117,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(805, 171);
+            this.label1.Location = new System.Drawing.Point(805, 169);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 6;
@@ -147,7 +130,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(824, 203);
+            this.label2.Location = new System.Drawing.Point(824, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 19);
             this.label2.TabIndex = 7;
@@ -160,7 +143,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.Location = new System.Drawing.Point(824, 229);
+            this.label3.Location = new System.Drawing.Point(824, 227);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 19);
             this.label3.TabIndex = 8;
@@ -173,7 +156,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label4.Location = new System.Drawing.Point(824, 255);
+            this.label4.Location = new System.Drawing.Point(824, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 19);
             this.label4.TabIndex = 9;
@@ -186,7 +169,7 @@
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label5.Location = new System.Drawing.Point(824, 281);
+            this.label5.Location = new System.Drawing.Point(824, 279);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 19);
             this.label5.TabIndex = 10;
@@ -227,7 +210,7 @@
             this.Payoutname.BackColor = System.Drawing.Color.Black;
             this.Payoutname.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.Payoutname.ForeColor = System.Drawing.Color.Silver;
-            this.Payoutname.Location = new System.Drawing.Point(816, 355);
+            this.Payoutname.Location = new System.Drawing.Point(816, 356);
             this.Payoutname.Name = "Payoutname";
             this.Payoutname.Size = new System.Drawing.Size(52, 17);
             this.Payoutname.TabIndex = 17;
@@ -237,11 +220,11 @@
             // 
             this.totalPayoutLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalPayoutLabel.BackColor = System.Drawing.Color.Black;
-            this.totalPayoutLabel.Font = new System.Drawing.Font("Calibri", 21F, System.Drawing.FontStyle.Bold);
+            this.totalPayoutLabel.Font = new System.Drawing.Font("Calibri", 22F, System.Drawing.FontStyle.Bold);
             this.totalPayoutLabel.ForeColor = System.Drawing.Color.HotPink;
-            this.totalPayoutLabel.Location = new System.Drawing.Point(806, 376);
+            this.totalPayoutLabel.Location = new System.Drawing.Point(796, 378);
             this.totalPayoutLabel.Name = "totalPayoutLabel";
-            this.totalPayoutLabel.Size = new System.Drawing.Size(71, 35);
+            this.totalPayoutLabel.Size = new System.Drawing.Size(93, 35);
             this.totalPayoutLabel.TabIndex = 18;
             this.totalPayoutLabel.Text = "1000";
             this.totalPayoutLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -286,6 +269,7 @@
             this.walletBalanceLabel.Size = new System.Drawing.Size(71, 33);
             this.walletBalanceLabel.TabIndex = 21;
             this.walletBalanceLabel.Text = "5000";
+            this.walletBalanceLabel.Click += new System.EventHandler(this.walletBalanceLabel_Click);
             // 
             // label10
             // 
@@ -335,7 +319,7 @@
             this.label7.BackColor = System.Drawing.Color.Black;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label7.Location = new System.Drawing.Point(824, 307);
+            this.label7.Location = new System.Drawing.Point(824, 305);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 19);
             this.label7.TabIndex = 25;
@@ -390,17 +374,51 @@
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(779, 93);
+            this.button1.Location = new System.Drawing.Point(779, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 27);
             this.button1.TabIndex = 29;
             this.button1.Text = "How to play?";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.UseWaitCursor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backButton.ErrorImage = null;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(85, 70);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(40, 39);
+            this.backButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.backButton.TabIndex = 30;
+            this.backButton.TabStop = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.AllowDrop = true;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button2.BackgroundImage = global::DicerollersFinals.Properties.Resources.user__1_;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(715, 70);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(58, 27);
+            this.button2.TabIndex = 31;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form4
             // 
@@ -410,6 +428,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 617);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.MultiplierLabel1);
             this.Controls.Add(this.MultiplierLabel3);
@@ -430,7 +450,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Exit);
             this.Controls.Add(this.PicDice1);
             this.Controls.Add(this.PicDice2);
             this.Controls.Add(this.PicDice3);
@@ -446,6 +465,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PicDice3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicDice1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +477,6 @@
         private System.Windows.Forms.PictureBox PicDice3;
         private System.Windows.Forms.PictureBox PicDice2;
         private System.Windows.Forms.PictureBox PicDice1;
-        private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -466,7 +485,6 @@
         private System.Windows.Forms.MaskedTextBox betAmount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label Payoutname;
-        private System.Windows.Forms.Label totalPayoutLabel;
         private System.Windows.Forms.Button rollButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label walletBalanceLabel;
@@ -478,5 +496,8 @@
         private System.Windows.Forms.Label MultiplierLabel3;
         private System.Windows.Forms.Label MultiplierLabel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox backButton;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Label totalPayoutLabel;
     }
 }
